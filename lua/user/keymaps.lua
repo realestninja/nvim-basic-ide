@@ -129,3 +129,6 @@ keymap("n", "Q", "qq")
 -- swap lines
 keymap("n", "-", "ddpkj")
 keymap("n", "_", "kddpk")
+
+-- window swap plugin
+keymap("n", "<leader><Space>", ":call WindowSwap#EasyWindowSwap()<CR>", opts)
