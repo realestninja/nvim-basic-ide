@@ -46,3 +46,23 @@ vim.api.nvim_command("autocmd BufWritePre * %s/\\s\\+$//e")
 vim.api.nvim_command("autocmd VimResized * wincmd =")
 vim.api.nvim_command("set number relativenumber")
 vim.api.nvim_command("set guicursor=i:block")
+
+
+-- git stuff
+vim.api.nvim_command("autocmd FileType gitcommit set textwidth=72")
+vim.api.nvim_command("autocmd FileType gitcommit set colorcolumn=73")
+vim.api.nvim_command("au FileType gitcommit 1 | startinsert")
+
+-- Git rebase
+vim.api.nvim_command("autocmd FileType gitrebase nnoremap <leader>p 0cwpick<esc>j0")
+vim.api.nvim_command("autocmd FileType gitrebase nnoremap <leader>r 0cwreword<esc>j0")
+vim.api.nvim_command("autocmd FileType gitrebase nnoremap <leader>s 0cwsquash<esc>j0")
+vim.api.nvim_command("autocmd FileType gitrebase nnoremap <leader>f 0cwfixup<esc>j0")
+vim.api.nvim_command("autocmd FileType gitrebase nnoremap <leader>d 0cwdrop<esc>j0")
+
+-- Git merge conflict
+-- <leader>gd -> enter diffmode
+-- d2o -> pick from leftside
+-- d3o -> pick from rightside
+-- ]c -> next conflict
+-- [c -> prev conflict
