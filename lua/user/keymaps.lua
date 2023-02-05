@@ -29,21 +29,27 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+-- keymap("n", "<S-l>", ":bnext<CR>", opts)
+-- keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<Tab>", ":bnext<CR>", opts)
+keymap("n", "<S-Tab>", ":bprevious<CR>", opts)
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Close buffers
-keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
+-- keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
+keymap("n", "<leader><Backspace>", "<cmd>Bdelete!<CR>")
 
--- Better paste
+-- Close split but keep buffer
+keymap("n", "<Backspace>", "<C-w>q<Enter>")
+
+-- Better paste (blackhole)
 keymap("v", "p", '"_dP', opts)
 
 -- Insert --
 -- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
+keymap("i", "jj", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -53,7 +59,7 @@ keymap("v", ">", ">gv", opts)
 -- Plugins --
 
 -- NvimTree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+-- keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
@@ -81,3 +87,44 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
+
+-- custom
+keymap("n", "<Enter>", ":w<Enter>")
+keymap("n", "<leader>q", ":bw<Enter>")
+keymap("n", "<leader>a", ":qa<Enter>")
+
+keymap("n", "<leader>bs", ":split<Enter>")
+keymap("n", "<leader>vs", ":vsplit<Enter>")
+
+keymap("n", "<leader>mks", ":mks!<Enter>")
+
+-- center current line
+keymap("n", "<leader>.", "z.")
+
+-- Toggle highlight search
+keymap("n", "<leader>hs", ":set hlsearch!<Enter>")
+
+-- Replace all occurences
+keymap("v", "<C-r>", '"hy:%s/<C-r>h//g<left><left>')
+keymap("v", "<leader><C-r>", '"hy:%s/<C-r>h/<C-r>h/g<left><left>')
+
+-- Set filetype to json and apply correct formatting
+keymap("n", "=j", ":set ft=json<CR>:%!python -m json.tool<CR>")
+
+-- Sort like a boss
+keymap("v", "<C-s>", ":sort<CR>")
+
+-- Change layout -> vertical/horizontal
+keymap("n", "<leader>lb", "<C-w>t<C-w>K<CR>", opts)
+keymap("n", "<leader>lv", "<C-w>t<C-w>H<CR>", opts)
+
+-- Append ; at end of line
+-- keymap("n", ";", ":execute 'normal! mqA;\<lt>esc>`q'<enter>")
+-- ^ needs to be fixed
+
+-- record macro to q
+keymap("n", "Q", "qq")
+
+-- swap lines
+keymap("n", "-", "ddpkj")
+keymap("n", "_", "kddpk")
