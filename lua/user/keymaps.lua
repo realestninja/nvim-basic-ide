@@ -63,10 +63,20 @@ keymap("n", "<C-n>", ":NvimTreeToggle<CR>")
 keymap("n", "<leader>n", ":NvimTreeFindFile<CR>")
 
 -- Telescope
+local tb = require('telescope.builtin')
 keymap("n", "<Space>p", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>s", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<Space><Space>", ":Telescope buffers<CR>", opts)
+keymap('v', '<leader>s', function()
+	local text = vim.getVisualSelection()
+	tb.live_grep({ default_text = text })
+end, opts)
+
+keymap('v', '<leader>S', function()
+	local text = vim.getVisualSelection()
+	tb.current_buffer_fuzzy_find({ default_text = text })
+end, opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
