@@ -34,9 +34,6 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<Tab>", ":bnext<CR>", opts)
 keymap("n", "<S-Tab>", ":bprevious<CR>", opts)
 
--- Clear highlights
-keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
-
 -- Close buffers
 -- keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 keymap("n", "<leader><Backspace>", "<cmd>Bdelete!<CR>")
@@ -81,10 +78,6 @@ end, opts)
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
--- Comment
-keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
-keymap("x", "<leader>/", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
-
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
 keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
@@ -114,6 +107,8 @@ keymap("n", "<leader>.", "z.")
 
 -- Toggle highlight search
 keymap("n", "<leader>hs", ":set hlsearch!<Enter>")
+-- Clear highlights
+keymap("n", "<leader>hc", "<cmd>nohlsearch<CR>", opts)
 
 -- Replace all occurences
 keymap("v", "<C-r>", '"hy:%s/<C-r>h//g<left><left>')
