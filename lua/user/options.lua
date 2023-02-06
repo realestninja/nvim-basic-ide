@@ -47,7 +47,6 @@ vim.api.nvim_command("autocmd VimResized * wincmd =")
 vim.api.nvim_command("set number relativenumber")
 vim.api.nvim_command("set guicursor=i:block")
 
-
 -- git stuff
 vim.api.nvim_command("autocmd FileType gitcommit set textwidth=72")
 vim.api.nvim_command("autocmd FileType gitcommit set colorcolumn=73")
