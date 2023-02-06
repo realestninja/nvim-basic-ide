@@ -1,3 +1,4 @@
+require "user.func_get-visual-sel"
 require "user.impatient"
 require "user.options"
 require "user.keymaps"
