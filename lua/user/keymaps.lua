@@ -76,7 +76,7 @@ keymap('v', '<leader>S', function()
 end, opts)
 
 -- Git
-keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+-- keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
@@ -137,3 +137,11 @@ keymap("n", "_", "kddpk")
 
 -- window swap plugin
 keymap("n", "<leader><Space>", ":call WindowSwap#EasyWindowSwap()<CR>", opts)
+
+-- fugitive git
+keymap("n", "_", "kddpk")
+keymap("n", "<leader>ga", ":Gwrite<Enter>")
+keymap("n", "<leader>gc", ":Gcommit<Space>-m<Space>''<left>")
+keymap("n", "<leader>gd", ":Gdiff<Enter>")
+keymap("n", "<leader>gb", ":Gblame<Enter>")
+vim.api.nvim_command("set diffopt+=vertical")
