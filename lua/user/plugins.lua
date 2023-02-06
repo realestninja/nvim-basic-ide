@@ -104,6 +104,7 @@ return packer.startup(function(use)
   -- oldschool vim
   use { "simeji/winresizer" }
   use { "wesQ3/vim-windowswap" }
+  use { "realestninja/nerdcommenter" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
