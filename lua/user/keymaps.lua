@@ -45,7 +45,7 @@ keymap("n", "<leader><Backspace>", "<cmd>Bdelete!<CR>")
 keymap("n", "<Backspace>", "<C-w>q<Enter>")
 
 -- Better paste (blackhole)
-keymap("v", "p", '"_dP', opts)
+keymap("v", "P", '"_dP', opts)
 
 -- Insert --
 -- Press jk fast to enter
