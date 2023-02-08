@@ -43,7 +43,7 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-  -- My plugins here
+  -- nvim plugins
   use { "wbthomason/packer.nvim", commit = "6afb67460283f0e990d35d229fd38fdc04063e0a" } -- Have packer manage itself
   use { "nvim-lua/plenary.nvim", commit = "4b7e52044bbb84242158d977a50c4cbcd85070c7" } -- Useful lua functions used by lots of plugins
   use { "windwp/nvim-autopairs", commit = "4fc96c8f3df89b6d23e5092d31c866c53a346347" } -- Autopairs, integrates with both cmp and treesitter
@@ -59,6 +59,14 @@ return packer.startup(function(use)
   use { "lewis6991/impatient.nvim", commit = "b842e16ecc1a700f62adb9802f8355b99b52a5a6" }
   use { "lukas-reineke/indent-blankline.nvim", commit = "db7cbcb40cc00fc5d6074d7569fb37197705e7f6" }
   use { "goolord/alpha-nvim", commit = "0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31" }
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v2', -- optional but strongly recommended
+    config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    end
+  }
 
   -- Colorschemes / themes
   use { "overcache/NeoSolarized" }
@@ -108,6 +116,7 @@ return packer.startup(function(use)
   use { "realestninja/nerdcommenter" }
   use { "realestninja/vim-printer" }
   use { "terryma/vim-expand-region" }
+  use { "tpope/vim-surround" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
