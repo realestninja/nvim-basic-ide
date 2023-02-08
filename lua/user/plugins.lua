@@ -107,6 +107,7 @@ return packer.startup(function(use)
   use { "wesQ3/vim-windowswap" }
   use { "realestninja/nerdcommenter" }
   use { "realestninja/vim-printer" }
+  use { "terryma/vim-expand-region" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
