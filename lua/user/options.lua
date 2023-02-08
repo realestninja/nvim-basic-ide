@@ -42,10 +42,32 @@ vim.opt.formatoptions:remove({ "c", "r", "o" }) -- This is a sequence of letters
 vim.opt.linebreak = true
 
 -- custom below
+-- Automatically deletes all trailing whitespace on save.
 vim.api.nvim_command("autocmd BufWritePre * %s/\\s\\+$//e")
+
+-- Auto resize windows
 vim.api.nvim_command("autocmd VimResized * wincmd =")
+
 vim.api.nvim_command("set number relativenumber")
+
+-- Fix cursor in insert mode
 vim.api.nvim_command("set guicursor=i:block")
+
+-- Disables automatic commenting on newline:
+vim.api.nvim_command("autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o")
+
+-- Deactivate relative linenumbers for inactive buffer
+vim.api.nvim_command(":augroup numbertoggle")
+vim.api.nvim_command(":  autocmd!")
+vim.api.nvim_command(":  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber")
+vim.api.nvim_command(":  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber")
+vim.api.nvim_command(":augroup END")
+
+-- Enable folds
+vim.opt.foldmethod = "indent"
+vim.opt.foldlevel = 1
+vim.opt.foldclose = "all"
+vim.opt.foldlevelstart = 20
 
 -- git stuff
 vim.api.nvim_command("autocmd FileType gitcommit set textwidth=72")
