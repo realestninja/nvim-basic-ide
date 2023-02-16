@@ -69,6 +69,9 @@ vim.opt.foldlevel = 1
 vim.opt.foldclose = "all"
 vim.opt.foldlevelstart = 20
 
+-- Disables automatic commenting on newline:
+vim.api.nvim_command("autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o")
+
 -- git stuff
 vim.api.nvim_command("autocmd FileType gitcommit set textwidth=72")
 vim.api.nvim_command("autocmd FileType gitcommit set colorcolumn=73")
