@@ -69,7 +69,8 @@ keymap("n", "<leader>s", ":Telescope live_grep<CR>", silent)
 keymap("n", "<Space><Space>", ":Telescope buffers<CR>", silent)
 keymap('v', '<leader>s', function()
 	local text = vim.getVisualSelection()
-	tb.live_grep({ default_text = text })
+  tb.ag({ default_text = text })
+  -- to do: trigger :Ag <text>
 end, silent)
 
 keymap('v', '<leader>S', function()
