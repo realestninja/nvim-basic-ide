@@ -29,3 +29,4 @@ require "user.expand-region"
 require "user.emmet-ls"
 require "user.hop"
 require "user.fugitive"
+vim.cmd('source ~/Dotfiles/nvim/vim/close-inactive-bufs.vim')
