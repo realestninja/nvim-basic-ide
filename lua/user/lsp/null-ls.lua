@@ -3,12 +3,15 @@ if not null_ls_status_ok then
   return
 end
 
-local eslint = require("eslint")
+-- local eslint = require("eslint")
 
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
+
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/code_actions
+local code_actions = null_ls.builtins.code_actions
 
 -- https://github.com/prettier-solidity/prettier-plugin-solidity
 null_ls.setup {
@@ -22,25 +25,27 @@ null_ls.setup {
     formatting.stylua,
     formatting.google_java_format,
     diagnostics.flake8,
+    diagnostics.eslint,
+    code_actions.eslint,
   },
 }
 
-eslint.setup({
-  bin = 'eslint', -- or `eslint_d`
-  code_actions = {
-    enable = true,
-    apply_on_save = {
-      enable = true,
-      types = { "directive", "problem", "suggestion", "layout" },
-    },
-    disable_rule_comment = {
-      enable = true,
-      location = "separate_line", -- or `same_line`
-    },
-  },
-  diagnostics = {
-    enable = true,
-    report_unused_disable_directives = false,
-    run_on = "type", -- or `save`
-  },
-})
+-- eslint.setup({
+  -- bin = 'eslint', -- or `eslint_d`
+  -- code_actions = {
+    -- enable = true,
+    -- apply_on_save = {
+      -- enable = true,
+      -- types = { "directive", "problem", "suggestion", "layout" },
+    -- },
+    -- disable_rule_comment = {
+      -- enable = true,
+      -- location = "separate_line", -- or `same_line`
+    -- },
+  -- },
+  -- diagnostics = {
+    -- enable = true,
+    -- report_unused_disable_directives = false,
+    -- run_on = "type", -- or `save`
+  -- },
+-- })
