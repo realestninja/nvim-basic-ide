@@ -61,18 +61,13 @@ keymap("v", ">", ">gv", silent)
 keymap("n", "<C-n>", ":NvimTreeToggle<CR>")
 keymap("n", "<leader>n", ":NvimTreeFindFile<CR>")
 
--- Telescope
+-- Telescope / Search
 local tb = require('telescope.builtin')
 keymap("n", "<Space>p", ":Telescope find_files<CR>", silent)
 keymap("n", "<leader>s", ":Telescope live_grep<CR>", silent)
 -- keymap("n", "<leader>fp", ":Telescope projects<CR>", silent)
 keymap("n", "<Space><Space>", ":Telescope buffers<CR>", silent)
-keymap('v', '<leader>s', function()
-	local text = vim.getVisualSelection()
-  tb.ag({ default_text = text })
-  -- to do: trigger :Ag <text>
-end, silent)
-
+keymap("v", "<leader>s", '"hy:Ag <C-r>h<Enter>', silent)
 keymap('v', '<leader>S', function()
 	local text = vim.getVisualSelection()
 	tb.current_buffer_fuzzy_find({ default_text = text })
