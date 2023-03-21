@@ -57,9 +57,12 @@ keymap("v", ">", ">gv", silent)
 
 -- Plugins --
 
--- NvimTree
-keymap("n", "<C-n>", ":NvimTreeToggle<CR>")
-keymap("n", "<leader>n", ":NvimTreeFindFile<CR>")
+-- Tree / NvimTree / CHADTree
+-- keymap("n", "<C-n>", ":NvimTreeToggle<CR>")
+-- keymap("n", "<leader>n", ":NvimTreeFindFile<CR>")
+keymap("n", "<C-n>", ":NERDTreeToggle<CR>")
+keymap("n", "<leader>n", ":NERDTreeFind<CR>")
+keymap("n", "<leader>N", ":NERDTreeFocus<CR>")
 
 -- Telescope / Search
 local tb = require('telescope.builtin')
