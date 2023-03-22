@@ -24,9 +24,10 @@ null_ls.setup {
     formatting.black.with { extra_args = { "--fast" } },
     formatting.stylua,
     formatting.google_java_format,
+    formatting.eslint_d,
     diagnostics.flake8,
     diagnostics.eslint,
-    code_actions.eslint,
+    code_actions.eslint_d,
   },
 }
 
