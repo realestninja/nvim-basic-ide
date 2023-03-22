@@ -67,6 +67,7 @@ keymap("n", "<leader>N", ":NERDTreeFocus<CR>")
 -- Telescope / Search
 local tb = require('telescope.builtin')
 keymap("n", "<Space>p", ":Telescope find_files<CR>", silent)
+keymap("n", "<Space>o", [[<cmd>lua require('telescope').extensions.recent_files.pick()<CR>]], silent_and_no_remap)
 keymap("n", "<leader>s", ":Telescope live_grep<CR>", silent)
 -- keymap("n", "<leader>fp", ":Telescope projects<CR>", silent)
 keymap("n", "<Space><Space>", ":Telescope buffers<CR>", silent)

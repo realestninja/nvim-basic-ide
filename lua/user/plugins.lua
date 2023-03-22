@@ -101,6 +101,7 @@ return packer.startup(function(use)
   use { "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" }
   use { "nvim-telescope/telescope-fzf-native.nvim", run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" }
   use ({ "kelly-lin/telescope-ag", requires = { { "nvim-telescope/telescope.nvim" } } })
+  use {"smartpde/telescope-recent-files"}
 
 
   -- Treesitter

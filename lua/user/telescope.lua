@@ -32,5 +32,6 @@ telescope.setup {
   }
 }
 
-telescope.load_extension('fzf')
+telescope.load_extension("fzf")
 telescope.load_extension("ag")
+telescope.load_extension("recent_files")
