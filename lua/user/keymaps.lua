@@ -127,8 +127,7 @@ keymap("n", "<leader>lb", "<C-w>t<C-w>K<CR>", silent_and_no_remap)
 keymap("n", "<leader>lv", "<C-w>t<C-w>H<CR>", silent_and_no_remap)
 
 -- Append ; at end of line
--- keymap("n", ";", ":execute 'normal! mqA;\<lt>esc>`q'<enter>")
--- ^ needs to be fixed
+keymap('n', ';', [[:execute "normal! mqA;\<lt>esc>\`q"<enter>]], {noremap = true})
 
 -- record macro to q
 keymap("n", "Q", "qq", noremap)
