@@ -146,3 +146,6 @@ keymap("n", "<leader>gc", ":Gcommit<Space>-m<Space>''<left>", noremap)
 keymap("n", "<leader>gd", ":Gdiff<Enter>", noremap)
 keymap("n", "<leader>gb", ":Gblame<Enter>", noremap)
 vim.api.nvim_command("set diffopt+=vertical")
+
+-- Keep default CR behaviour for quickfix list
+vim.api.nvim_command("autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>")

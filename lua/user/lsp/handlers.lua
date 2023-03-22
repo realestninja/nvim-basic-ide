@@ -67,7 +67,7 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "<leader>ep", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
 	keymap(bufnr, "n", "<leader>er", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
 	keymap(bufnr, "n", "<leader>lss", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-	keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+	keymap(bufnr, "n", "<leader>ll", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 	keymap(bufnr, "n", "<leader>ef", ":lua vim.lsp.buf.code_action()<CR>", opts)
 	keymap(bufnr, "n", "<leader>es", ":Neoformat eslint_d<CR>", opts)
 end
