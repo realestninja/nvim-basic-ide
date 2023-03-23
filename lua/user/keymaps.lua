@@ -111,6 +111,8 @@ keymap("n", "<leader>.", "z.", noremap)
 keymap("n", "<leader>hs", ":set hlsearch!<Enter>", noremap)
 -- Clear highlights
 keymap("n", "<leader>hc", "<cmd>nohlsearch<CR>", noremap)
+-- Highlight + search current word
+vim.api.nvim_set_keymap('n', '*', [[:let @/ = '<c-r><c-w>' | set hlsearch<cr>]], noremap)
 
 -- Replace all occurences
 keymap("v", "<C-r>", '"hy:%s/<C-r>h//g<left><left>', noremap)
