@@ -36,7 +36,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", silent)
 keymap("n", "<Tab>", ":bnext<CR>", silent)
 keymap("n", "<S-Tab>", ":bprevious<CR>", silent)
 
--- Close buffers
+-- Close buffers keep split
 -- keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 keymap("n", "<leader><Backspace>", "<cmd>Bdelete!<CR>", noremap)
 
@@ -66,7 +66,7 @@ keymap("n", "<leader>N", ":NERDTreeFocus<CR>")
 
 -- Telescope / Search
 local tb = require('telescope.builtin')
-keymap("n", "<Space>p", ":Telescope find_files<CR>", silent)
+keymap("n", "<Space>p", ":Telescope find_files hidden=true<CR>", silent)
 keymap("n", "<Space>o", [[<cmd>lua require('telescope').extensions.recent_files.pick()<CR>]], silent_and_no_remap)
 keymap("n", "<leader>s", ":Telescope live_grep<CR>", silent)
 -- keymap("n", "<leader>fp", ":Telescope projects<CR>", silent)
@@ -135,8 +135,8 @@ keymap('n', ';', [[:execute "normal! mqA;\<lt>esc>\`q"<enter>]], {noremap = true
 keymap("n", "Q", "qq", noremap)
 
 -- swap lines
-keymap("n", "-", "ddpkj", noremap)
 keymap("n", "_", "kddpk", noremap)
+keymap("n", "-", "ddpkj", noremap)
 
 -- window swap plugin
 keymap("n", "<leader><Space>", ":call WindowSwap#EasyWindowSwap()<CR>", silent)
