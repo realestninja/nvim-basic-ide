@@ -151,3 +151,16 @@ vim.api.nvim_command("set diffopt+=vertical")
 
 -- Keep default CR behaviour for quickfix list
 vim.api.nvim_command("autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>")
+
+-- ai fuck shit
+keymap("n", "<Space>ki", ":ChatGPT<Enter>", noremap)
+
+keymap("n", "<Space>kk", ":ChatGPTEditWithInstructions<Enter>", noremap)
+keymap("v", "<Space>kk", ":<Backspace><Backspace><Backspace><Backspace><Backspace>ChatGPTEditWithInstructions<Enter>", noremap)
+
+keymap("n", "<Space>ka", ":ChatGPTActAs<Enter>", noremap)
+
+keymap("n", "<Space>kr", ":ChatGPTRun<Space>", noremap)
+keymap("v", "<Space>kr", ":ChatGPTRun<Space>", noremap)
+keymap("v", "<Space>ko", ":ChatGPTRun<Space>optimize_code<Enter>", noremap)
+keymap("v", "<Space>ke", ":ChatGPTRun<Space>explain_code<Enter>", noremap)
