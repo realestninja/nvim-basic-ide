@@ -15,7 +15,7 @@ function OpenStyledComponentsFile()
 			:silent call mkdir(stylesDir, "p", 0700)
 			:silent call writefile([], targetFile)
 			:NERDTreeRefreshRoot
-			execute "split" targetFile
+			execute "vsplit" targetFile
 			:NERDTreeRefreshRoot
 		endif
   endif
