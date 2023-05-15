@@ -25,6 +25,14 @@ local types = require("luasnip.util.types")
 local parse = require("luasnip.util.parser").parse_snippet
 local ms = ls.multi_snippet
 
+-- jump to next / prev snippet param
+local keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+keymap("i", "<c-l>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
+keymap("s", "<c-l>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
+keymap("i", "<c-h>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
+keymap("s", "<c-h>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
+
 -- dummy snippet
 ls.add_snippets("all", {
 	s("ternary", {
