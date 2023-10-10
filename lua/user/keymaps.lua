@@ -76,6 +76,7 @@ keymap('v', '<leader>S', function()
 	local text = vim.getVisualSelection()
 	tb.current_buffer_fuzzy_find({ default_text = text })
 end, silent)
+-- to do ignore yarn lock
 
 -- Git
 -- keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
