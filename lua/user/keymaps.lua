@@ -30,25 +30,9 @@ keymap("n", "<C-Down>", ":resize +2<CR>", silent)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", silent)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", silent)
 
--- Navigate buffers
--- keymap("n", "<S-l>", ":bnext<CR>", opts)
--- keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<Tab>", ":bnext<CR>", silent)
-keymap("n", "<S-Tab>", ":bprevious<CR>", silent)
-
 -- Close buffers keep split
 -- keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 keymap("n", "<leader><Backspace>", "<cmd>Bdelete!<CR>", noremap)
-
--- Close split but keep buffer
-keymap("n", "<Backspace>", "<C-w>q<Enter>", noremap)
-
--- Blackhole pasting
-keymap("v", "P", '"_dP', noremap)
-
--- Insert --
--- Press jk fast to enter
-keymap("i", "jj", "<ESC>", silent)
 
 -- Visual --
 -- Stay in indent mode
@@ -95,19 +79,6 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", silent)
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", silent)
 
--- custom
-keymap("n", "<Enter>", ":w<Enter>", noremap)
-keymap("n", "<leader>q", ":bw<Enter>", noremap)
-keymap("n", "<leader>a", ":qa<Enter>", noremap)
-
-keymap("n", "<leader>bs", ":split<Enter>", noremap)
-keymap("n", "<leader>vs", ":vsplit<Enter>", noremap)
-
-keymap("n", "<leader>mks", ":mks!<Enter>", noremap)
-
--- center current line
-keymap("n", "<leader>.", "z.", noremap)
-
 -- Toggle highlight search
 keymap("n", "<leader>hs", ":set hlsearch!<Enter>", noremap)
 -- Clear highlights
@@ -115,25 +86,9 @@ keymap("n", "<leader>hc", "<cmd>nohlsearch<CR>", noremap)
 -- Highlight + search current word
 vim.api.nvim_set_keymap('n', '*', [[:let @/ = '<c-r><c-w>' | set hlsearch<cr>]], noremap)
 
--- Replace all occurences
-keymap("v", "<C-r>", '"hy:%s/<C-r>h//g<left><left>', noremap)
-keymap("v", "<leader><C-r>", '"hy:%s/<C-r>h/<C-r>h/g<left><left>', noremap)
-
--- Set filetype to json and apply correct formatting
-keymap("n", "=j", ":set ft=json<CR>:%!python -m json.tool<CR>", noremap)
-
--- Sort like a boss
-keymap("v", "<C-s>", ":sort<CR>", noremap)
-
 -- Change layout -> vertical/horizontal
 keymap("n", "<leader>lb", "<C-w>t<C-w>K<CR>", silent_and_no_remap)
 keymap("n", "<leader>lv", "<C-w>t<C-w>H<CR>", silent_and_no_remap)
-
--- Append ; at end of line
-keymap('n', ';', [[:execute "normal! mqA;\<lt>esc>\`q"<enter>]], {noremap = true})
-
--- record macro to q
-keymap("n", "Q", "qq", noremap)
 
 -- window swap plugin
 keymap("n", "<leader><Space>", ":call WindowSwap#EasyWindowSwap()<CR>", silent)
