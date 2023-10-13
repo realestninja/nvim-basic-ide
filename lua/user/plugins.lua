@@ -143,6 +143,10 @@ return packer.startup(function(use)
   use { "terryma/vim-expand-region" }
   use { "tpope/vim-surround" }
   use { "editorconfig/editorconfig-vim" }
+  use {
+      'junegunn/fzf.vim',
+      requires = { 'junegunn/fzf', run = ':call fzf#install()' }
+   }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
