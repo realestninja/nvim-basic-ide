@@ -50,3 +50,8 @@ nnoremap =j :set ft=json<CR>:%!python -m json.tool<CR>
 " Replace all occurences
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
 vnoremap <leader><C-r> "hy:%s/<C-r>h/<C-r>h/g<left><left>
+
+" REPL
+vnoremap <leader>rn :w !node<Enter>
+vnoremap <leader>rr :w !ruby<Enter>
+vnoremap <leader>rp :w !python<Enter>
