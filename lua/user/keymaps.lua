@@ -93,13 +93,6 @@ keymap("n", "<leader>lv", "<C-w>t<C-w>H<CR>", silent_and_no_remap)
 -- window swap plugin
 keymap("n", "<leader><Space>", ":call WindowSwap#EasyWindowSwap()<CR>", silent)
 
--- fugitive git
-keymap("n", "<leader>ga", ":Gwrite<Enter>", noremap)
-keymap("n", "<leader>gc", ":Gcommit<Space>-m<Space>''<left>", noremap)
-keymap("n", "<leader>gd", ":Gdiff<Enter>", noremap)
-keymap("n", "<leader>gb", ":Gblame<Enter>", noremap)
-vim.api.nvim_command("set diffopt+=vertical")
-
 -- Keep default CR behaviour for quickfix list
 vim.api.nvim_command("autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>")
 

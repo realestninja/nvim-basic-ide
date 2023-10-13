@@ -29,7 +29,6 @@ require "user.lsp-echo-diagnostics"
 require "user.solarized"
 require "user.expand-region"
 require "user.hop"
-require "user.fugitive"
 require "user.luasnip"
 vim.cmd('source ~/Dotfiles/nvim/vim/close-inactive-bufs.vim')
 vim.cmd('source ~/Dotfiles/nvim/vim/open-styled-components-file.vim')

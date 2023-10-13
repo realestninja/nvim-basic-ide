@@ -55,3 +55,11 @@ vnoremap <leader><C-r> "hy:%s/<C-r>h/<C-r>h/g<left><left>
 vnoremap <leader>rn :w !node<Enter>
 vnoremap <leader>rr :w !ruby<Enter>
 vnoremap <leader>rp :w !python<Enter>
+
+" fugitive
+nnoremap <leader>ga :Gwrite<Enter>
+nnoremap <leader>gc :Gcommit<Space>-m<Space>''<left>
+nnoremap <leader>gd :Gdiff<Enter>
+nnoremap <leader>gb :Git blame<Enter>
+
+set diffopt+=vertical
