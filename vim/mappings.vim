@@ -59,7 +59,7 @@ vnoremap <leader>rp :w !python<Enter>
 " fugitive
 nnoremap <leader>ga :Gwrite<Enter>
 nnoremap <leader>gc :Gcommit<Space>-m<Space>''<left>
-nnoremap <leader>gd :Gdiff<Enter>
+nnoremap <leader>gd :Gdiffsplit!<Enter>
 nnoremap <leader>gb :Git blame<Enter>
 
 set diffopt+=vertical
