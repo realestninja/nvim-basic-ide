@@ -34,3 +34,4 @@ require "user.luasnip"
 vim.cmd('source ~/Dotfiles/nvim/vim/close-inactive-bufs.vim')
 vim.cmd('source ~/Dotfiles/nvim/vim/open-styled-components-file.vim')
 vim.cmd('source ~/Dotfiles/nvim/vim/zoom.vim')
+vim.cmd('source ~/Dotfiles/nvim/vim/mappings.vim')
