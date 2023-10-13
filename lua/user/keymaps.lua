@@ -135,15 +135,10 @@ keymap('n', ';', [[:execute "normal! mqA;\<lt>esc>\`q"<enter>]], {noremap = true
 -- record macro to q
 keymap("n", "Q", "qq", noremap)
 
--- swap lines
-keymap("n", "_", "kddpk", noremap)
-keymap("n", "-", "ddpkj", noremap)
-
 -- window swap plugin
 keymap("n", "<leader><Space>", ":call WindowSwap#EasyWindowSwap()<CR>", silent)
 
 -- fugitive git
-keymap("n", "_", "kddpk", noremap)
 keymap("n", "<leader>ga", ":Gwrite<Enter>", noremap)
 keymap("n", "<leader>gc", ":Gcommit<Space>-m<Space>''<left>", noremap)
 keymap("n", "<leader>gd", ":Gdiff<Enter>", noremap)
