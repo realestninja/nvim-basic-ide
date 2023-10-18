@@ -1,5 +1,27 @@
 # A Basic Stable IDE config for Neovim
 
+##  Troubleshooting
+### Diagnostics
+```
+:checkhealth
+```
+
+### If treesitter behaves like a pita:
+* Run `:checkhealth` and check the treesitter section
+* If required, install missing parsers:
+```
+:TSInstall javascript
+:TSInstall rust
+```
+
+### When re-installing from Dotfiles doesn't work out of the box
+Spam `:PackerInstall`
+
+
+todo: update readme content below
+
+---
+
 > Why does this repo exist?
 
 This config attempts to provide a rock solid fully featured starting point for someone new to Neovim, or just tired of maintaining the basic IDE components of their config.
