@@ -87,3 +87,6 @@ ls.add_snippets("javascript", {
     t({"", "));"}),
   }),
 })
+
+-- carry-over js snippets to react
+require("luasnip").filetype_extend("javascriptreact", {"javascript"})
