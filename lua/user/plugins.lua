@@ -45,7 +45,7 @@ packer.init {
 return packer.startup(function(use)
   -- nvim plugins
   use { "wbthomason/packer.nvim", commit = "6afb67460283f0e990d35d229fd38fdc04063e0a" } -- Have packer manage itself
-  use { "nvim-lua/plenary.nvim" } -- Useful lua functions used by lots of plugins
+  use { "nvim-lua/plenary.nvim", commit = "50012918b2fc8357b87cff2a7f7f0446e47da174" } -- Useful lua functions used by lots of plugins
   use { "windwp/nvim-autopairs", commit = "4fc96c8f3df89b6d23e5092d31c866c53a346347" } -- Autopairs, integrates with both cmp and treesitter
   use { "numToStr/Comment.nvim", commit = "97a188a98b5a3a6f9b1b850799ac078faa17ab67" }
   use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "32d9627123321db65a4f158b72b757bcaef1a3f4" }
@@ -60,6 +60,7 @@ return packer.startup(function(use)
   use { "lukas-reineke/indent-blankline.nvim", commit = "db7cbcb40cc00fc5d6074d7569fb37197705e7f6" }
   use {
     'phaazon/hop.nvim',
+    commit = "1a1eceafe54b5081eae4cb91c723abd1d450f34b",
     branch = 'v2', -- optional but strongly recommended
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
@@ -68,11 +69,11 @@ return packer.startup(function(use)
   }
 
   -- Colorschemes / themes
-  use { "overcache/NeoSolarized" }
+  use { "overcache/NeoSolarized", commit = "b94b1a9ad51e2de015266f10fdc6e142f97bd617" }
 
   -- Tree
-  use { "ryanoasis/vim-devicons" }
-  use { "preservim/nerdtree" }
+  use { "ryanoasis/vim-devicons", commit = "71f239af28b7214eebb60d4ea5bd040291fb7e33" }
+  use { "preservim/nerdtree", commit = "3a66272486083bbafb1b764009a1ba5e4ee684da" }
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "b0dff0ec4f2748626aae13f011d1a47071fe9abc" } -- The completion plugin
@@ -80,7 +81,7 @@ return packer.startup(function(use)
   use { "hrsh7th/cmp-path", commit = "447c87cdd6e6d6a1d2488b1d43108bfa217f56e1" } -- path completions
   use { "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" } -- snippet completions
   use { "hrsh7th/cmp-nvim-lsp", commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8" }
-  use { "hrsh7th/cmp-nvim-lua" }
+  use { "hrsh7th/cmp-nvim-lua", commit = "f12408bdb54c39c23e67cab726264c10db33ada8" }
 
   -- snippets
   use { "L3MON4D3/LuaSnip", commit = "8f8d493e7836f2697df878ef9c128337cbf2bb84" } --snippet engine
@@ -94,27 +95,27 @@ return packer.startup(function(use)
   use { "williamboman/mason-lspconfig.nvim", commit = "0eb7cfefbd3a87308c1875c05c3f3abac22d367c" }
   use { "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" } -- for formatters and linters
   use { "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" }
-  use { "MunifTanjim/eslint.nvim" }
-  use { "sbdchd/neoformat" }
-  use { "styled-components/vim-styled-components" }
+  use { "MunifTanjim/eslint.nvim", commit = "158f2289907d377018752fcfe0d61b746dc11767" }
+  use { "sbdchd/neoformat", commit = "aedb6f9d3f53d5da229095f7d761d749f8c5c7e0" }
+  use { "styled-components/vim-styled-components", commit = "75e178916fc3e61385350933a23055927f5f60b7" }
 
   -- Telescope
   use { "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" }
-  use { "nvim-telescope/telescope-fzf-native.nvim", run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" }
-  use ({ "kelly-lin/telescope-ag", requires = { { "nvim-telescope/telescope.nvim" } } })
-  use {"smartpde/telescope-recent-files"}
+  use { "nvim-telescope/telescope-fzf-native.nvim", commit = "6c921ca12321edaa773e324ef64ea301a1d0da62", run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" }
+  use ({ "kelly-lin/telescope-ag", commit = "7d25064da3c7689461bcfa89ad1f08548415193d", requires = { { "nvim-telescope/telescope.nvim" } } })
+  use { "smartpde/telescope-recent-files", commit = "6893cda11625254cc7dc2ea76e0a100c7deeb028" }
 
 
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    -- commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
+    commit = "afa103385a2b5ef060596ed822ef63276ae88016",
     -- 'manually run :TSUpdate if it causes problems'
   }
 
   -- Git
   use { "lewis6991/gitsigns.nvim", commit = "f98c85e7c3d65a51f45863a34feb4849c82f240f" }
-  use { "tpope/vim-fugitive" }
+  use { "tpope/vim-fugitive", commit = "cbe9dfa162c178946afa689dd3f42d4ea8bf89c1" }
 
   -- DAP
   use { "mfussenegger/nvim-dap", commit = "6b12294a57001d994022df8acbe2ef7327d30587" }
@@ -135,18 +136,19 @@ return packer.startup(function(use)
     }
   })
 
-  -- oldschool vim
-  use { "simeji/winresizer" }
-  use { "wesQ3/vim-windowswap" }
+  -- oldschool vim / general utilities
   use { "realestninja/nerdcommenter" }
   use { "realestninja/vim-printer" }
-  use { "terryma/vim-expand-region" }
-  use { "tpope/vim-surround" }
-  use { "editorconfig/editorconfig-vim" }
-  use {
-      'junegunn/fzf.vim',
-      requires = { 'junegunn/fzf', run = ':call fzf#install()' }
-   }
+  use { "simeji/winresizer", commit = "9bd559a03ccec98a458e60c705547119eb5350f3" }
+  use { "wesQ3/vim-windowswap", commit = "15db3f697aa1fa696d99fcdc920c90cd2cec855e" }
+  use { "terryma/vim-expand-region", commit = "966513543de0ddc2d673b5528a056269e7917276" }
+  use { "tpope/vim-surround", commit = "3d188ed2113431cf8dac77be61b842acb64433d9" }
+  use { "editorconfig/editorconfig-vim", commit = "0d54ea863089fb13be423b4aed6cca35f3a5d778" }
+  -- use {
+      -- 'junegunn/fzf.vim',
+      -- commit = "70c461c60bb1e2165a378e8ba0451b511c29b5cb",
+      -- requires = { 'junegunn/fzf', run = ':call fzf#install()' }
+  -- }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
