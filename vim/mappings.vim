@@ -57,6 +57,7 @@ vnoremap <leader>rr :w !ruby<Enter>
 vnoremap <leader>rp :w !python<Enter>
 
 " fugitive
+nnoremap <leader>gs :Git<Enter>
 nnoremap <leader>ga :Gwrite<Enter>
 nnoremap <leader>gc :Gcommit<Space>-m<Space>''<left>
 nnoremap <leader>gd :Gdiffsplit!<Enter>
