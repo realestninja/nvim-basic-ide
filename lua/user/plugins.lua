@@ -100,7 +100,7 @@ return packer.startup(function(use)
   use { "styled-components/vim-styled-components", commit = "75e178916fc3e61385350933a23055927f5f60b7" }
 
   -- Telescope
-  use { "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" }
+  use { "nvim-telescope/telescope.nvim", tag = '0.1.4', }
   use { "nvim-telescope/telescope-fzf-native.nvim", commit = "6c921ca12321edaa773e324ef64ea301a1d0da62", run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" }
   use ({ "kelly-lin/telescope-ag", commit = "7d25064da3c7689461bcfa89ad1f08548415193d", requires = { { "nvim-telescope/telescope.nvim" } } })
   use { "smartpde/telescope-recent-files", commit = "6893cda11625254cc7dc2ea76e0a100c7deeb028" }
