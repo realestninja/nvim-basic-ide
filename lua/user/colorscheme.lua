@@ -1,6 +1,16 @@
-local colorscheme = "NeoSolarized"
+vim.o.background = 'dark'
 
-local status_ok, _ = pcall(vim.cmd.colorscheme, colorscheme)
-if not status_ok then
-  return
-end
+require("solarized").setup({
+  transparent = { enabled = false },
+  palette = "solarized",
+  styles = {
+    keywords = { bold = false },
+  },
+  highlights = {
+    KeyWord = { fg = '#859900' },
+    Delimiter = { fg = '#dc322f' },
+    Number = { fg = '#2aa198' }
+  },
+})
+
+vim.cmd.colorscheme('solarized')

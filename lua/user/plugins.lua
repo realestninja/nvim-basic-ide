@@ -69,7 +69,18 @@ return packer.startup(function(use)
   }
 
   -- Colorschemes / themes
-  use { "overcache/NeoSolarized", commit = "b94b1a9ad51e2de015266f10fdc6e142f97bd617" }
+  use {
+    "maxmx03/solarized.nvim",
+    config = function()
+      vim.o.background = 'dark'
+      ---@type solarized
+      local solarized = require('solarized')
+      vim.o.termguicolors = true
+      vim.o.background = 'dark'
+      solarized.setup({})
+      vim.cmd.colorscheme 'solarized'
+    end
+  }
 
   -- Tree
   use { "ryanoasis/vim-devicons", commit = "71f239af28b7214eebb60d4ea5bd040291fb7e33" }
