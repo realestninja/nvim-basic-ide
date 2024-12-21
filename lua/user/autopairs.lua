@@ -10,6 +10,7 @@ npairs.setup {
   ts_config = {
     lua = { "string", "source" },
     javascript = { "string", "template_string" },
+    typescript = { "string", "template_string" },
     java = false,
   },
 
