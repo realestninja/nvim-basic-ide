@@ -51,9 +51,9 @@ return packer.startup(function(use)
   use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "32d9627123321db65a4f158b72b757bcaef1a3f4" }
   -- use { "kyazdani42/nvim-web-devicons", commit = "563f3635c2d8a7be7933b9e547f7c178ba0d4352" }
   -- use { "kyazdani42/nvim-tree.lua", commit = "7282f7de8aedf861fe0162a559fc2b214383c51c" }
-  use { "akinsho/bufferline.nvim", commit = "83bf4dc7bff642e145c8b4547aa596803a8b4dc4" }
+  use { "akinsho/bufferline.nvim" }
   use { "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" }
-  use { "nvim-lualine/lualine.nvim", commit = "a52f078026b27694d2290e34efa61a6e4a690621" }
+  use { "nvim-lualine/lualine.nvim" }
   use { "akinsho/toggleterm.nvim", commit = "2a787c426ef00cb3488c11b14f5dcf892bbd0bda" }
   use { "ahmedkhalf/project.nvim", commit = "628de7e433dd503e782831fe150bb750e56e55d6" }
   use { "lewis6991/impatient.nvim", commit = "b842e16ecc1a700f62adb9802f8355b99b52a5a6" }
@@ -109,9 +109,10 @@ return packer.startup(function(use)
   use { "MunifTanjim/eslint.nvim", commit = "158f2289907d377018752fcfe0d61b746dc11767" }
   use { "sbdchd/neoformat", commit = "aedb6f9d3f53d5da229095f7d761d749f8c5c7e0" }
   use { "styled-components/vim-styled-components", commit = "75e178916fc3e61385350933a23055927f5f60b7" }
+  use { "simrat39/rust-tools.nvim", commit = "0cc8adab23117783a0292a0c8a2fbed1005dc645" }
 
   -- Telescope
-  use { "nvim-telescope/telescope.nvim", tag = '0.1.4', }
+  use { "nvim-telescope/telescope.nvim", tag = '0.1.4' }
   use { "nvim-telescope/telescope-fzf-native.nvim", commit = "6c921ca12321edaa773e324ef64ea301a1d0da62", run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" }
   use ({ "kelly-lin/telescope-ag", commit = "7d25064da3c7689461bcfa89ad1f08548415193d", requires = { { "nvim-telescope/telescope.nvim" } } })
   use { "smartpde/telescope-recent-files", commit = "6893cda11625254cc7dc2ea76e0a100c7deeb028" }
@@ -123,6 +124,10 @@ return packer.startup(function(use)
     commit = "afa103385a2b5ef060596ed822ef63276ae88016",
     -- 'manually run :TSUpdate if it causes problems'
   }
+  use { "tree-sitter/tree-sitter-javascript", commit = "f1e5a09b8d02f8209a68249c93f0ad647b228e6e" }
+  use { "tree-sitter/tree-sitter-typescript" }
+  use { "tree-sitter/tree-sitter-rust", commit = "48e053397b587de97790b055a1097b7c8a4ef846" }
+  use { "ikatyang/tree-sitter-toml", commit = "8bd2056818b21860e3d756b5a58c4f6e05fb744e" }
 
   -- Git
   use { "lewis6991/gitsigns.nvim", commit = "f98c85e7c3d65a51f45863a34feb4849c82f240f" }
@@ -136,12 +141,12 @@ return packer.startup(function(use)
   -- ai fuck shit
   use({
     "jackMort/ChatGPT.nvim",
-    commit = "be2c62986ef3223a61d2f1dcf41915a70307afca",
+    commit = "aadb607038d53d97be4da368b07355f65ad3f047",
     config = function()
       require("chatgpt").setup()
     end,
     requires = {
-      "MunifTanjim/nui.nvim",
+      { "MunifTanjim/nui.nvim", commit = "1d044af" },
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim"
     }
