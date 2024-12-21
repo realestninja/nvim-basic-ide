@@ -24,11 +24,11 @@ null_ls.setup {
     formatting.black.with { extra_args = { "--fast" } },
     formatting.stylua,
     formatting.google_java_format,
-    formatting.eslint_d.with { filetypes = { "javascript" } },
+    formatting.eslint_d.with { filetypes = { "javascript", "javascriptreact" } },
     formatting.stylelint,
     diagnostics.flake8,
-    diagnostics.eslint.with { filetypes = { "javascript" } },
-    code_actions.eslint_d.with { filetypes = { "javascript" } },
+    diagnostics.eslint.with { filetypes = { "javascript", "javascriptreact" } },
+    code_actions.eslint_d.with { filetypes = { "javascript", "javascriptreact" } },
   },
 }
 
