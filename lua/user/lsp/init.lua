@@ -56,3 +56,42 @@ nvim_lsp.diagnosticls.setup {
     formatFiletypes = formatFiletypes,
   }
 }
+
+nvim_lsp.denols.setup {
+  -- on_attach = function(client, bufnr)
+    -- nvim_lsp.util.on_attach(client, bufnr)
+    -- -- Disable TypeScript server if it's causing issues
+    -- if client.name == "tsserver" then
+      -- client.stop()
+    -- end
+  -- end,
+  root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+  init_options = {
+    lint = true,
+    unstable = true,
+    suggest = {
+      imports = {
+        hosts = {
+          ["https://deno.land"] = true,
+          ["https://cdn.nest.land"] = true,
+          ["https://crux.land"] = true
+        }
+      }
+    }
+  }
+}
+
+-- -- Configure tsserver but exclude it from Deno projects
+-- nvim_lsp.tsserver.setup {
+  -- on_attach = function(client, bufnr)
+    -- local root_dir = client.config.root_dir
+    -- if root_dir and (nvim_lsp.util.path.exists(nvim_lsp.util.path.join(root_dir, "deno.json")) or
+          -- nvim_lsp.util.path.exists(nvim_lsp.util.path.join(root_dir, "deno.jsonc"))) then
+      -- client.stop() -- Disable tsserver in Deno projects
+    -- else
+      -- nvim_lsp.util.on_attach(client, bufnr)
+    -- end
+  -- end,
+  -- root_dir = nvim_lsp.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json"),
+  -- -- Add any additional tsserver-specific settings here
+-- }
